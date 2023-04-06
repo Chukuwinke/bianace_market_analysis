@@ -12,7 +12,7 @@ function App() {
   
 
   useEffect(() =>{
-    const binanceSocket = new WebSocket("wss://stream.binance.com:9443/ws/arbusdt@kline_1d")
+    const binanceSocket = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_1d")
     binanceSocket.onmessage = (event) => {
       const data = JSON.parse(event.data) 
       const {E:date, k:{n :numberOfTrades, o:openPrice, c:closePrice, h:highPrice, l:lowPrice, T:closeTime}} = data 
